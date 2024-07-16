@@ -73,4 +73,4 @@ GitHub API를 활용한 레포지토리 검색 기능 구현 미니 프로젝트
 </details>
 
 ## 실행 화면
-
+<img src="https://github.com/devuoon/Git-Repo-Search/blob/master/src/sample_img.png" />
