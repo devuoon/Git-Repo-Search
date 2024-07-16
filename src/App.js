@@ -1,25 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+// src/App.js
+import React, { useState } from 'react';
+import Container from 'react-bootstrap/Container';
+import { FaGithubAlt } from "react-icons/fa";
+import SearchBar from './components/SearchBar';
+import UserRepository from './components/UserRepository'; // ensure the correct import
+import * as Styled from './pageStyled';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+const App = () => {
+    const [query, setQuery] = useState('');
+
+    const handleSearch = (query) => {
+        setQuery(query);
+    };
+
+    return (
+        <Container className="d-flex align-items-center flex-column">
+            <Styled.H1><FaGithubAlt /></Styled.H1>
+            <SearchBar onSearch={handleSearch} />
+            {query && <UserRepository query={query} />}
+        </Container>
+    );
+};
 
 export default App;
